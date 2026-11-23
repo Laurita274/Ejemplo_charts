@@ -1,0 +1,253 @@
+/* ================= GLOBALES ================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* ================= HEADER ================= */
+.header-principal {
+    padding: 30px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #c796ff, #523079, #1f063b);
+}
+
+.titulo-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.icono {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.descripcion-header {
+    font-weight: bold;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ================= TÍTULOS E ÍCONOS ================= */
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+}
+
+.icono-seccion {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+h3 {
+    color: #7e22ce;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* ================= NAVEGACIÓN ================= */
+nav {
+    background-color: rgba(82, 42, 146, 0.85);
+    padding: 15px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e2c2ff;
+}
+
+/* ================= SECCIONES (MAIN) ================= */
+main {
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+main section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(126, 34, 206, 0.15);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(31, 6, 59, 0.12);
+    min-height: 55vh;
+    scroll-margin-top: 80px;
+}
+
+main section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #b29bc97a;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    color: #523079;
+}
+
+main section p {
+    color: #523079;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* ================= GRÁFICAS ================= */
+.contenedor-grafica {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ================= BOTONES GENERALES ================= */
+.botoncito {
+    background-color: #9333ea;
+    color: white;
+    font-weight: bold;
+    border-color: #7852a323;
+    transition: background-color 0.3s ease;
+}
+
+.botoncito:hover {
+    background-color: #523079;
+    color: white;
+}
+
+/* ================= BOTONES DE ALERTAS (SECCIÓN 4.2) ================= */
+.btn-alerta {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn-alerta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-alerta:active {
+    transform: scale(0.96);
+}
+
+.alerta-success  { background-color: #2e7d32; }
+.alerta-error    { background-color: #c62828; }
+.alerta-warning  { background-color: #d97706; }
+.alerta-info     { background-color: #7e22ce; }
+.alerta-question { background-color: #581c87; }
+
+/* ================= BOTONES DE INPUTS (SECCIONES 4.4 Y 4.5) ================= */
+.b-blue, .b-purple, .b-teal, .b-orange, .b-gray, .b-red {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.b-blue:active, .b-purple:active, .b-teal:active, .b-orange:active, .b-gray:active, .b-red:active {
+    transform: scale(0.95);
+}
+
+.b-blue:hover, .b-purple:hover, .b-teal:hover, .b-orange:hover, .b-gray:hover, .b-red:hover {
+    opacity: 0.85;
+}
+
+.b-blue   { background-color: #4a90e2; }
+.b-purple { background-color: #9b59b6; }
+.b-teal   { background-color: #1abc9c; }
+.b-orange { background-color: #f39c12; }
+.b-gray   { background-color: #7f8c8d; }
+.b-red    { background-color: #e53e3e; }
+
+/* ================= BOTONES ELEMENTOS ESPECIALES ================= */
+.btn-especial {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn-especial:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-especial:active {
+    transform: scale(0.96);
+}
+
+.esp-confirm { background-color: #581c87; }
+.esp-timer   { background-color: #7e22ce; }
+.esp-html    { background-color: #a855f7; }
+
+/* ================= AJUSTES PARA PÁGINA DASHBOARD Y REDIRECCIÓN ================= */
+.seccion-compacta {
+    min-height: auto;
+}
+
+.contenedor-grafica-grande {
+    height: 360px;
+}
+
+.btn-volver {
+    background-color: transparent;
+    color: #7e22ce;
+    border: 2px solid #7e22ce;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 6px 14px;
+    transition: all 0.25s ease;
+}
+
+.btn-volver:hover {
+    background-color: #7e22ce;
+    color: white;
+}
+
+/* ================= PERSONALIZACIÓN SWEETALERT2 ================= */
+.swal2-title {
+    border-bottom: 2px solid #ba81ed;
+    padding-bottom: 15px !important;
+    margin-bottom: 12px !important;
+}
