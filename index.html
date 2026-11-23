@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Local</title>
+    <link rel="stylesheet" href="css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/icono.webp" type="image/png" />
+  </head>
+  <body>
+    <header class="header-principal">
+      <h1 class="titulo-con-icono">
+        <img src="img/home.svg" alt="Icono de Inicio" class="icono" />
+        Dashboard
+      </h1>
+      <p class="descripcion-header">
+        Taller de SweetAlert2 y Chart.js: registro dinámico de ventas en tiempo real.
+      </p>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+      <a href="#graficas">Gráficas</a>
+      <a href="#alertas">Alertas</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#especiales">Especiales</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <main>
+      <!-- ================= SECCIÓN GRÁFICAS ================= -->
+      <section id="graficas">
+        <h2 class="titulo-seccion">
+          <img src="img/cake.svg" alt="Icono Gráficas" class="icono-seccion" />
+          Gráficas
+        </h2>
+
+        <!-- Primera fila: Barras, Dona y Líneas -->
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="contenedor-grafica">
+              <canvas id="miGraficaBarras"></canvas>
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-center">
+            <div class="contenedor-grafica">
+              <canvas id="dona"></canvas>
+            </div>
+            <button class="btn botoncito mt-3" id="btnActualizarDona">
+              Actualizar datos
+            </button>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="contenedor-grafica">
+              <canvas id="lineas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segunda fila: Torta, Radar y Dispersión -->
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4">
+            <div class="contenedor-grafica">
+              <canvas id="torta"></canvas>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="contenedor-grafica">
+              <canvas id="radar"></canvas>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="contenedor-grafica">
+              <canvas id="dispersion"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SECCIÓN ALERTAS ================= -->
+      <section id="alertas">
+        <h2 class="titulo-seccion">
+          <img src="img/alert.svg" alt="Icono Alertas" class="icono-seccion" />
+          Alertas
+        </h2>
+        <p>Contenido para alertas.</p>
+        <h3>Los 5 iconos — sección 4.2</h3>
+
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button class="btn-alerta alerta-success" id="btnSuccess">Success (Correcto)</button>
+          <button class="btn-alerta alerta-error" id="btnError">Error</button>
+          <button class="btn-alerta alerta-warning" id="btnWarning">Warning (Atención)</button>
+          <button class="btn-alerta alerta-info" id="btnInfo">Info (Información)</button>
+          <button class="btn-alerta alerta-question" id="btnQuestion">Question (Pregunta)</button>
+        </div>
+      </section>
+
+      <!-- ================= SECCIÓN INPUTS ================= -->
+      <section id="inputs">
+        <h2 class="titulo-seccion">
+          <img src="img/text.svg" alt="Icono Inputs" class="icono-seccion" />
+          Inputs
+        </h2>
+        <p>Contenido para inputs.</p>
+
+        <h3>4.4 Reemplazo de prompt() (pedir texto)</h3>
+        <div class="d-flex flex-wrap gap-2 mt-2 mb-4">
+          <button class="b-red" id="prompt">Ingresar nombre</button>
+        </div>
+
+        <h3>3. Tipos de input — sección 4.5</h3>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button class="b-blue"    onclick="demoInput('text')">text</button>
+          <button class="b-blue"    onclick="demoInput('email')">email</button>
+          <button class="b-purple"  onclick="demoInput('password')">password</button>
+          <button class="b-purple"  onclick="demoInput('number')">number</button>
+          <button class="b-teal"    onclick="demoInput('textarea')">textarea</button>
+          <button class="b-teal"    onclick="demoSelect()">select</button>
+          <button class="b-orange"  onclick="demoInput('checkbox')">checkbox</button>
+          <button class="b-orange"  onclick="demoInput('file')">file</button>
+          <button class="b-gray"    onclick="demoInput('range')">range</button>
+        </div>
+      </section>
+
+      <!-- ================= SECCIÓN ELEMENTOS ESPECIALES ================= -->
+      <section id="especiales">
+        <h2 class="titulo-seccion">
+          <img src="img/star.svg" alt="Icono Especiales" class="icono-seccion" />
+          Elementos Especiales
+        </h2>
+        <p>Diálogos avanzados de SweetAlert2.</p>
+
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button class="btn-especial esp-confirm" id="btnConfirm">Confirmación (4.3)</button>
+          <button class="btn-especial esp-timer" id="btnTimer">Temporizador (4.6)</button>
+          <button class="btn-especial esp-html" id="btnHtml">HTML Personalizado (4.7)</button>
+        </div>
+      </section>
+
+      <!-- ================= ACCESO AL DASHBOARD INTEGRADO ================= -->
+      <section id="dashboard" class="seccion-compacta">
+        <h2 class="titulo-seccion">
+          <img src="img/dashboard.svg" alt="Icono Dashboard" class="icono-seccion" />
+          Dashboard
+        </h2>
+        <p class="mb-3">Proyecto integrado: registro dinámico de ventas en tiempo real.</p>
+        <a href="dashboard.html" class="btn botoncito">Ir al Dashboard</a>
+      </section>
+    </main>
+
+    <script src="js/chart.umd.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
